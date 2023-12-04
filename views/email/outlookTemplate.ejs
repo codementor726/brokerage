@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 100%;
+      }
+      .jumbotron {
+        margin-top: 10px;
+      }
+      .content img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="font-family: Calibri !important; font-size: 11px !important"
+    >
+      <%- include('../partials/header') %>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            style="
+              padding: 30px;
+              margin-top: 20px;
+              border: 1px solid lightgray;
+              background-color: #fbfbfb;
+              box-shadow: 0 0 5px lightgrey;
+              width: 100%;
+              max-width: 50%;
+              margin: 0 auto;
+            "
+          >
+            <div class="content" style="line-height: 20px">
+              <%- payload.message %>
+            </div>
+            <br />
+            <br />
+            <p style="line-height: 20px">Regards ,</p>
+            <p style="line-height: 20px; font-weight: 700">
+              <%= payload.name %>
+            </p>
+            <div style="padding: 30px 0">
+              <div style="width: 120px; height: auto; overflow: hidden">
+                <img
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    object-position: center;
+                  "
+                  src="<%= baseUrl%>/imgs/Signature-pic.png"
+                  alt="logo"
+                />
+              </div>
+            </div>
+            <% if(payload.contact.length > 0){ %>
+            <p style="line-height: 20px">Contact: <%= payload.contact %></p>
+            <% } %> <% if(payload.deskContact.length > 0){ %>
+            <p style="line-height: 20px">
+              Desk Contact: <%= payload.deskContact %>
+            </p>
+            <% } %> <% if(payload.officeContact.length > 0){ %>
+            <p style="line-height: 20px">
+              Office Contact: <%= payload.officeContact %>
+            </p>
+            <% } %> <% if(payload.cell.length > 0){ %>
+            <p style="line-height: 20px">Cell: <%= payload.cell %></p>
+            <% } %>
+            <p style="line-height: 20px"><%= payload.email %></p>
+            <p style="line-height: 20px"><%= payload.address %></p>
+            <p style="line-height: 20px"><%= payload.url %></p>
+          </div>
+          <div class="list-group">
+            <!-- loop over blog posts and render them -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF</title>
+
+  <style>
+    * {
+      font-family: 'Times New Roman', Times, serif !important;
+    }
+
+    .dates_deadlines_table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .dates_deadlines_table thead th,
+    .dates_deadlines_table tbody td {
+      height: 40px;
+    }
+
+    .dates_deadlines_table thead th,
+    .dates_deadlines_table tbody th {
+      text-align: center;
+    }
+
+    .dates_deadlines_table tbody tr:nth-child(odd) {
+      background-color: rgb(217, 226, 243);
+    }
+
+    .main_list>li {
+      margin-bottom: 25px;
+    }
+
+    p,
+    li,
+    li p {
+      font-size: 12px;
+    }
+
+    h6 {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    h5 {
+      font-weight: 400;
+      font-size: 14.5px;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 13px;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .main_listing p,
+    .main_listing li,
+    .main_listing li p {
+      text-align: justify;
+    }
+
+    .main_listing .main_list li {
+      font-size: 14.5px;
+    }
+
+    .main_listing .main_list li ul li p {
+      font-size: 13px;
+      text-align: justify;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    @page {
+      margin: 40px;
+      size: letter;
+      /*or width then height 150mm 50mm*/
+    }
+  </style>
+</head>
+
+<body>
+  <section style="max-width: 85%; margin: 0 auto" class="pdf_section">
+    <div style="width: 200px; height: 100px; overflow: hidden" class="logo_image">
+      <img style="
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+          " class="logo" src="<%=logo_img%>" alt="logo" />
+    </div>
+
+    <div class="form_approval">
+      <h6 style="font-weight: 800">
+        THIS IS A BINDING CONTRACT. THIS FORM HAS IMPORTANT LEGAL CONSEQUENCES
+        AND THE PARTIES SHOULD CONSULT LEGAL AND TAX OR OTHER COUNSEL BEFORE
+        SIGNING.
+      </h6>
+      <h6 style="font-weight: 800">
+        Compensation charged by brokerage firms is not set by law. Such
+        charges are established by each real estate brokerage firm.
+      </h6>
+      <h6 style="font-weight: 800">
+        DIFFERENT BROKERAGE RELATIONSHIPS ARE AVAILABLE WHICH INCLUDE BUYER
+        AGENCY, SELLER AGENCY, OR TRANSACTION-BROKERAGE.
+        <h6>
+    </div>
+
+    <div class="main_heading" style="text-align: center; max-width: 60%; margin: 0 auto">
+      <h2>EXCLUSIVE RIGHT-TO-SELL LISTING CONTRACT</h2>
+    </div>
+
+    <div class="agreement_type" style="text-align: center; font-weight: 800">
+      <table style="width:100%">
+        <tr>
+          <td style="text-align: right; padding-right: 8pt; width:50%;">
+            <div class="seller_agency" style="display: inline-block">
+        <h6>
+          SELLER AGENCY
+          <span>
+            <% let checked = is_seller_agency == "yes" ? "(✓)" : "( )" %>
+            <%= checked %>
+          </span>
+        </h6>
+      </div>
+          </td>
+          <td style="text-align: left;  padding-left: 8pt; width:50%;">
+            <div class="transaction_brokerage" style="display: inline-block">
+        <h6>
+          TRANSACTION BROKERAGE
+          <span>
+            <% let transactionChecked = is_transaction_brokerage == "yes" ? "(✓)" : "( )" %>
+            <%= transactionChecked %>
+          </span>
+          <h6>
+      </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="agreement_date" style="text-align: right; margin-bottom: 30px">
+      <h6>
+        Date:
+        <span style="border-bottom: 1px solid black; padding: 0 60px"><%= current_date %></span>
+      </h6>
+    </div>
+
+    <div class="main_listing">
+      <ul class="main_list" style="list-style: decimal; padding-left: 24px">
+        <li style="font-weight: 800;">
+          <h5 style="margin-bottom:0"><b>AGREEMENT.</b></h5>
+           <h6 style="margin-top: 0">
+                Seller and Brokerage Firm enter into this exclusive,
+                irrevocable contract (Seller Listing Contract) and agree to
+                its provisions. Broker, on behalf of Brokerage Firm, agrees to
+                provide brokerage services to Seller. Seller agrees to pay
+                Brokerage Firm as set forth in this Seller Listing Contract.
+              </h6>
+              <ul style="list-style: lower-alpha; font-weight: 800">
+                <li>
+                  <h6 style="margin-bottom:15px;">
+                    If this Business Opportunity includes Real Estate, a
+                    separate Colorado Real Estate Commission EXCLUSIVE
+                    RIGHT-TO-SELL LISTING CONTRACT (real estate) will be
+                    attached and become part of this Agreement.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+        <li style="font-weight: 800; margin-top: 15pt">
+          <h5 style="margin-bottom:0"><b>BROKER AND BROKERAGE FIRM. Multiple-Person Firm.</b></h5>
+          <h6 style="margin-top: 0">
+                Broker (as defined below) is the individual designated by
+                Brokerage Firm to serve as the broker of Seller and to perform
+                the services for Seller required by this Seller Listing
+                Contract. If more than one individual is so designated, then
+                references in this Seller Listing Contract to Broker include
+                all persons so designated, including substitute or additional
+                brokers. The brokerage relationship exists only with Broker
+                and does not extend to the employing broker, Brokerage Firm or
+                to any other brokers employed or engaged by Brokerage Firm who
+                are not so designated.
+              </h6>
+        </li>
+        <li style="font-weight: 800; margin-top: 15pt">
+          <h6><b>DEFINED TERMS.</b> </h6>
+          <ul style="list-style: upper-alpha">
+            <li style="font-weight: 400">
+              <h6>
+                <b>Seller/Business Opportunity:</b> <%= dba_business_tradename %>
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6><b>Brokerage:</b> Business Brokerage Services </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6><b>Broker:</b> <%= broker_name %></h6>
+              </li>
+
+              <li style="font-weight: 400">
+             <h6 style="margin-bottom: 0">
+                  <b>Business Opportunity Address:</b> <%= business_address %>
+              </h6>
+              <h6 style="margin-top: 0">
+                together with the interests, improvements, furniture,
+                fixtures, and equipment, unless otherwise specified.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6><b>Sale; Lease</b> </h6>
+              <ul style="list-style: lower-roman">
+                <li style="font-weight: 400">
+                  <h6>
+                    A “Sale” of the Business Opportunity is the voluntary
+                    transfer or exchange of any interest in the Business
+                    Opportunity or the voluntary creation of the obligation to
+                    convey any interest in the Business Opportunity, including
+                    a contract or lease. It also includes an agreement to
+                    transfer any ownership interest in an entity which owns
+                    the Business Opportunity.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    Seller authorizes Broker to negotiate a lease of the
+                    Business Opportunity. “Lease of the Business Opportunity”
+                    or “Lease” means any agreement between the Seller and a
+                    tenant to create a tenancy or leasehold interest in the
+                    Business Opportunity.
+                    <h6>
+                </li>
+              </ul>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>Listing Period.</b> The Listing Period of this Seller
+                Listing Contract begins on <%= start_date %> and continues
+                through the earlier of (1) completion of the Sale or, if
+                applicable, Lease of the Business Opportunity or (2) <%=
+                  end_date %>, and any written extensions (Listing Period).
+                Broker must continue to assist in the completion of any Sale
+                or Lease of the Business Opportunity for which compensation is
+                payable to Brokerage Firm under § 7 of this Seller Listing
+                Contract.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>Applicability of Terms.</b> A check or similar mark in a
+                box means that such provision is applicable. The abbreviation
+                “N/A” or the word “Deleted” means not applicable. The
+                abbreviation “MEC” (mutual execution of this contract) means
+                the date upon which both parties have signed this Seller
+                Listing Contract.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6><b>Day; Computation of Period of Days, Deadline</b> </h6>
+              <ul style="list-style: lower-roman">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Day.</b> As used in this Seller Listing Contract, the
+                    term “day” means the entire day ending at 11:59 p.m.,
+                    United States Mountain Time (Standard or Daylight Savings
+                    as applicable).
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6 style="margin-bottom: 15px">
+                    <b>Computation of Period of Days, Deadline.</b> In
+                    computing a period of days, when the ending date is not
+                    specified, e.g., three days after MEC, the first day is
+                    excluded and the last day is included. If any deadline
+                    falls on a Saturday, Sunday or federal or Colorado state
+                    holiday (Holiday), such deadline will be extended to the
+                    next day that is not a Saturday, Sunday or Holiday.
+                  </h6>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>BROKERAGE RELATIONSHIP.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6>
+                If the Seller Agency box at the top of page 1 is checked,
+                Broker represents Seller as Seller’s limited agent (Seller’s
+                Agent). If the Transaction-Brokerage box at the top of page 1
+                is checked, Broker acts as a Transaction-Broker.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>In-Company Transaction – Different Brokers.</b> When Seller
+                and buyer in a transaction are working with different brokers
+                within the Brokerage Firm, those brokers continue to conduct
+                themselves consistent with the brokerage relationships they
+                have established. Seller acknowledges that Brokerage Firm is
+                allowed to offer and pay compensation to brokers within
+                Brokerage Firm working with a buyer.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>In-Company Transaction – One Broker.</b> If Seller and
+                buyer are both working with the same Broker, Broker must
+                function as:
+              </h6>
+              <ul style="list-style: lower-roman">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6>
+                    Seller’s Agent. If the Seller Agency box at the top of
+                    page 1 is checked, the parties agree the following
+                    applies:
+                  </h6>
+                  <ul style="list-style: decimal">
+                    <li>
+                      <h6>
+                      <b>Seller Agency Unless Brokerage Relationship with
+                        Both.</b>
+                      Broker represents Seller as Seller’s Agent and must
+                      treat the buyer as a customer. A customer is a party to
+                      a transaction with whom Broker has no brokerage
+                      relationship. Broker must disclose to such customer
+                      Broker’s relationship with Seller. However, if Broker
+                      delivers to Seller a written Change of Status that
+                      Broker has a brokerage relationship with the buyer then
+                      Broker is working with both Seller and buyer as a
+                      Transaction Broker. If the box in § 4.C.i.2
+                      <b>(Seller Agency Only)</b> is checked, § 4.C.i.2
+                      <b>(Seller Agency Only)</b> applies instead.
+                      </h6>
+                    </li>
+
+                    <li>
+                      <h6>
+                      <b>
+                        <%= checked %> Seller Agency Only.</b>
+                      If this box is checked, Broker represents Seller as
+                      Seller’s Agent and must treat the buyer as a customer.
+                      </h6>
+                    </li>
+                  </ul>
+                </li>
+                <li style="font-weight: 400">
+                  <h6 style="margin-bottom: 15px;">
+                    <b>Transaction-Broker.</b> If the Transaction-Brokerage
+                    box at the top of page 1 is checked, or in the event
+                    neither box is checked, Broker must work with Seller as a
+                    Transaction-Broker. A Transaction-Broker must perform the
+                    duties described in § 5 and facilitate sales transactions
+                    without being an advocate or agent for either party. If
+                    Seller and buyer are working with the same Broker, Broker
+                    must continue to function as a Transaction-Broker.
+                  </h6>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>BROKERAGE DUTIES.</b></h5>
+          <h6 style="margin-top: 0">
+                Brokerage Firm, acting through Broker, as either a
+                Transaction-Broker or a Seller’s Agent, must perform the
+                following <b>“Uniform Duties”</b> when working with Seller:
+              </h6>
+              <ul style="list-style: upper-alpha">
+                <!-- <li style="display: none"></li> -->
+                <li>
+                  <h6>
+                    Broker must exercise reasonable skill and care for Seller,
+                    including, but not limited to the following:
+                  </h6>
+                  <ul style="list-style: lower-roman">
+                    <li>
+                      <h6>
+                        Performing the terms of any written or oral agreement
+                        with Seller;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Presenting all offers to and from Seller in a timely
+                        manner regardless of whether the Business Opportunity
+                        is subject to a contract for Sale;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Disclosing to Seller adverse material facts actually
+                        known by Broker;
+                      </h6>
+                    </li>
+
+                    <li>
+                      <h6>
+                        Advising Seller regarding the transaction and advising
+                        Seller to obtain expert advice as to material matters
+                        about which Broker knows but the specifics of which
+                        are beyond the expertise of Broker;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Accounting in a timely manner for all money and
+                        Business Opportunity received; and
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Keeping Seller fully informed regarding the
+                        transaction.
+                      </h6>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h6>
+                    Broker must not disclose the following information without
+                    the informed consent of Seller:
+                  </h6>
+                  <ul style="list-style: lower-roman">
+                    <!-- <li style="display: none"></li> -->
+                    <li>
+                      <h6>
+                        That Seller is willing to accept less than the asking
+                        price for the Business Opportunity;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        What the motivating factors are for Seller to sell the
+                        Business Opportunity;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        That Seller will agree to financing terms other than
+                        those offered;
+                      </h6>
+                    </li>
+
+                    <li>
+                      <h6>
+                        Any material information about Seller unless
+                        disclosure is required by law or failure to disclose
+                        such information would constitute fraud or dishonest
+                        dealing; or
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Any facts or suspicions regarding circumstances that
+                        could psychologically impact or stigmatize the
+                        Business Opportunity.
+                      </h6>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h6>
+                    Seller consents to Broker’s disclosure of Seller’s
+                    confidential information to the supervising broker or
+                    designee for the purpose of proper supervision, provided
+                    such supervising broker or designee does not further
+                    disclose such information without consent of Seller, or
+                    use such information to the detriment of Seller.
+                  </h6>
+                </li>
+
+                <li>
+                  <h6>
+                    Brokerage Firm may have agreements with other sellers to
+                    market and sell their Business Opportunity. Broker may
+                    show alternative properties not owned by Seller to other
+                    prospective buyers and list competing properties for sale.
+                  </h6>
+                </li>
+
+                <li>
+                  <h6>
+                    Broker is not obligated to seek additional offers to
+                    purchase the Business Opportunity while the Business
+                    Opportunity is subject to a contract for Sale.
+                  </h6>
+                </li>
+
+                <li>
+                  <h6>
+                    Broker has no duty to conduct an independent inspection of
+                    the Business Opportunity for the benefit of a buyer and
+                    has no duty to independently verify the accuracy or
+                    completeness of statements made by Seller or independent
+                    inspectors. Broker has no duty to conduct an independent
+                    investigation of a buyer’s financial condition or to
+                    verify the accuracy or completeness of any statement made
+                    by a buyer.
+                  </h6>
+                </li>
+
+                <li>
+                  <h6>
+                    Seller understands that Seller is not liable for Broker’s
+                    acts or omissions that have not been approved, directed,
+                    or ratified by Seller.
+                  </h6>
+                </li>
+
+                <li>
+                  <h6 style="margin-bottom: 15px;">
+                    When asked, Broker will disclose to prospective buyers and
+                    cooperating brokers the existence of offers on the
+                    Business Opportunity and whether the offers were obtained
+                    by Broker, a broker within Brokerage Firm or by another
+                    broker.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+
+        <li style="font-weight: 800; margin-top: 40px">
+          <h5 style="margin-bottom:0"><b>ADDITONAL DUTIES OF SELLER’S AGENT.</b></h5>
+          <h6 style="margin-top: 0">
+                If the Seller Agency box at the top of page 1 is checked,
+                Broker is Seller’s Agent, with the following additional
+                duties:
+              </h6>
+              <ul style="list-style: upper-alpha">
+                <!-- <li style="display: none"></li> -->
+                <li>
+                  <h6>
+                    Promoting the interests of Seller with the utmost good
+                    faith, loyalty and fidelity;
+                  </h6>
+                </li>
+                <li>
+                  <h6>
+                    Seeking a price and terms that are set forth in this
+                    Seller Listing Contract; and
+                  </h6>
+                </li>
+                <li>
+                  <h6 style="margin-bottom: 15px;">
+                    Counseling Seller as to any material benefits or risks of
+                    a transaction that are actually known by Broker.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>COMPENSATION TO BROKERAGE FIRM.</b></h5>
+          <h6 style="margin-top: 0">
+                Seller agrees that any Brokerage Firm compensation that is
+                conditioned upon the Sale of the Business Opportunity will be
+                earned by Brokerage Firm as set forth herein without any
+                discount or allowance for any efforts made by Seller or by any
+                other person in connection with the Sale of the Business
+                Opportunity.
+              </h6>
+              <ul style="list-style: upper-alpha">
+                <!-- <li style="display: none"></li> -->
+                <li>
+                  <h6>
+                    <b>Amount.</b> In consideration of the services to be
+                    performed by Broker, Seller agrees to pay Brokerage Firm
+                    as follows:
+                  </h6>
+                  <ul style="list-style: lower-roman">
+                    <!-- <li style="display: none"></li> -->
+                    <li>
+                      <h6>
+                        <b>Business Sale Commission.</b> The greater of <%=
+                          total_purchase_percent %>% of the total purchase price
+                        or, $<%= total_purchase_price %> in U.S. dollars.
+                        Real Estate related commission documented on
+                        <b>Colorado Real Estate Commission EXCLUSIVE
+                          RIGHT-TO-SELL LISTING CONTRACT (real estate)</b>
+                      </h6>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h6>
+                    When Earned. Such commission is earned upon the occurrence
+                    of any of the following:
+                  </h6>
+                  <ul style="list-style: lower-roman">
+                    <!-- <li style="display: none"></li> -->
+                    <li>
+                      <h6>
+                        Any Sale of the Business Opportunity within the
+                        Listing Period by Seller, by Broker or by any other
+                        person;
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Broker finding a buyer who is ready, willing and able
+                        to complete the Sale or Lease as specified in this
+                        Seller Listing Contract; or
+                      </h6>
+                    </li>
+                    <li>
+                      <h6>
+                        Any Sale or Lease of the Business Opportunity within
+                        730 calendar days after the Listing Period expires
+                        (Holdover Period) (1) to anyone with whom Broker
+                        negotiated and (2) whose name was submitted to Seller
+                        by Broker during the Listing Period (Submitted
+                        Prospect). Provided, however, Seller will owe the
+                        commission to Brokerage Firm under this § 7.B.iii if a
+                        commission is earned by another licensed brokerage
+                        firm acting pursuant to an exclusive agreement entered
+                        into during the Holdover Period and a Sale or Lease to
+                        a Submitted Prospect is consummated.
+                      </h6>
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h6 style="margin-bottom: 15px;">
+                    <b>When Applicable and Payable.</b> The commission
+                    obligation applies to a Sale made during the Listing
+                    Period or any extension of such original or extended term.
+                    The commission described in § 7.A.i is payable at the time
+                    of the closing of the Sale, or, if there is no closing
+                    (due to the refusal or neglect of Seller) then on the
+                    contracted date of closing, as contemplated by § 7.B.i or
+                    § 7.B.iii, or upon fulfillment of § 7.B.ii where the offer
+                    made by such buyer is not accepted by Seller.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>SERVICES AND MARKETING.</b></h5>
+          <h6 style="margin-top: 0">
+                Seller has been advised by Broker of the advantages and
+                disadvantages of various marketing methods, including
+                advertising and various methods of making the Business
+                Opportunity accessible by other brokerage firms and whether
+                some methods may limit the ability of another broker to show
+                the Business Opportunity. After having been so advised, Seller
+                has chosen the following:
+              </h6>
+              <ul style="list-style: upper-alpha">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Broker Marketing.</b> The Broker and Brokerage Firm
+                    will market the Business and Business Opportunity for Sale
+                    on the following Internet platforms: Brokerage Firm’s
+                    company website, bizbuysell.com, bizquest.com, and
+                    loopnet.com, etc.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6 style="margin-bottom: 15px;">
+                    <b>Marketing Termination.</b> Broker and Brokerage Firm
+                    may discontinue using any marketing materials if, in
+                    Brokerage Firm’s sole discretion, Broker or Brokerage Firm
+                    receives a credible threat of litigation or a complaint
+                    regarding the use of such marketing material. Upon
+                    expiration of the Listing Period and request from Seller,
+                    Broker will use reasonable efforts to remove information
+                    submitted to the Internet platforms. Seller understands
+                    that information submitted to some of the Internet
+                    platforms may be difficult, if not impossible, to remove
+                    from syndicators and the Internet and releases Broker from
+                    any liability for Broker’s inability to remove the
+                    information.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>SELLER’S OBLIGATION TO BROKER; DISCLOSURES AND CONSENT.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6>
+                <b>Negotiations and Communication.</b> Seller agrees to
+                conduct all negotiations for the Sale of the Business
+                Opportunity only through Broker, and to refer to Broker all
+                communications received in any form from real estate brokers,
+                prospective buyers, tenants or any other source during the
+                Listing Period of this Seller Listing Contract.
+              </h6>
+            </li>
+            <li style="font-weight: 400">
+              <h6>
+                <b>Advertising.</b> Seller agrees that the Broker or Brokerage
+                Firm will have the sole and exclusive right to advertise the
+                Business Opportunity for sale.
+              </h6>
+            </li>
+            <li style="font-weight: 400">
+              <h6>
+                <b>No Existing Listing Agreement.</b> Seller represents that
+                Seller is NOT currently a party to any listing agreement with
+                any other broker to sell the Business Opportunity. Seller
+                further represents that Seller has not received a list of
+                “Submitted Prospects” pursuant to a previous listing agreement
+                to sell the Business Opportunity with any other broker.
+              </h6>
+            </li>
+            <li style="font-weight: 400">
+              <h6>
+                <b>Ownership of Materials and Consent.</b> Seller represents
+                that all materials (including all photographs, renderings,
+                images, videos or other creative items) supplied to Broker by
+                or on behalf of Seller are owned by Seller, except as Seller
+                has disclosed in writing to Broker. Seller is authorized to
+                and grants to Broker, Brokerage Firm and any Internet platform
+                (that Broker submits the Business Opportunity to) a
+                nonexclusive irrevocable, royalty-free license to use such
+                material for marketing of the Business Opportunity, reporting
+                as required and the publishing, display and reproduction of
+                such material, compilation and data. This license survives the
+                termination of this Seller Listing Contract. Unless agreed to
+                otherwise, all materials provided by Broker (photographs,
+                renderings, images, videos, or other creative items) may not
+                be used by Seller for any reason.
+              </h6>
+            </li>
+            <li style="font-weight: 400">
+              <h6 style="margin-bottom: 15px;">
+                <b>Due Diligence and Cooperation.</b> Seller agrees to
+                promptly provide due diligence information or due diligence
+                documents reasonably requested by Broker or a potential
+                purchaser and to cooperate with potential purchaser in all due
+                diligence investigations. Seller understands and hereby
+                acknowledges that all facts, figures, and additional
+                supporting documentation pertaining to Business Opportunity
+                has been provided to Broker by Seller, and that Broker will
+                rely upon Seller’s representation of such facts, figures, and
+                other information when describing and promoting the business,
+                without making an investigation of the accuracy of such
+                representation by Seller. Therefore, Seller hereby represents
+                and warrants that all such facts, figures, and all additional
+                supporting documents including information contained in the
+                discovery and due diligence period are true and accurate.
+                Seller represents and warrants that Seller and Business
+                Opportunity are now and shall remain, in full compliance with
+                all local, state and federal laws, rules and regulations
+                regarding the operation and sale of Business Opportunity and
+                that Seller shall continue to operate the business consistent
+                with customary business practices including maintenance of
+                historical inventory levels and maintenance of all equipment
+                in good working order. Seller hereby agrees to indemnify and
+                hold harmless Broker against any and all claims, demands,
+                causes for actions, losses, damages, costs and expenses
+                including reasonable attorney's fees and fees on appeals
+                arising out of breach of the warranty.
+              </h6>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>PRICE AND TERMS.</b></h5>
+          <h6 style="margin-top: 0">The following Price and Terms are acceptable to </h6>
+              <ul style="list-style: upper-alpha">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Initial Asking Price Of Business.</b> U.S. $<%=
+                      askng_business_price %> plus inventory of $<%=
+                      asking_plus_inventory_price %>
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Initial Asking Price Of CRE.</b> U.S. $<%=
+                      asking_price_of_cre %>
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <% let cashChecked = cash == "yes" ? "(✓)" : "( )" %>
+                    <% let sbaChecked = sba == "yes" ? "(✓)" : "( )" %>
+                    <b>Terms. Cash <%= cashChecked %> SBA <%= sbaChecked %> Other: <%= other %></b>
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Closing Costs.</b> The closing costs will be shared ½
+                    by Buyer and ½ by Seller.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Earnest Money.</b> Minimum amount of earnest money to
+                    be deposited by a Buyer upon mutually executed contract
+                    U.S. $<%= earnest_money %> in the form of a personal
+                    check, business check, or wire transfer.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6 style="margin-bottom: 15px;">
+                    <b>Seller Proceeds.</b> Seller will receive net proceeds
+                    of closing via Wire Transfer to an account specified by
+                    Seller, at Seller’s expense; or Closing Company’s Trust
+                    Account Check. Wire and other frauds occur in real estate
+                    transactions. Any time Seller is supplying confidential
+                    information such as social security numbers or bank
+                    account numbers, Seller should provide the information in
+                    person or in another secure manner.
+                  </h6>
+                </li>
+              </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>DEPOSITS.</b></h5>
+              <h6 style="margin-top: 0">
+                Brokerage Firm is authorized to accept earnest money deposits
+                received by Broker pursuant to a proposed contract for the
+                Sale of the Business Opportunity. Brokerage Firm is authorized
+                to deliver the earnest money deposit to the closing agent, if
+                any, at or before the closing of the contract for the Sale of
+                the Business Opportunity.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>INCLUSIONS AND EXCLUSIONS.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6>
+                <b>Inclusions.</b> The Purchase Price includes the following
+                items (Inclusions): any and all furniture, fixtures,
+                equipment, tenant improvements, tenant fixtures, tangible and
+                intangible personal property, telephone and facsimile numbers,
+                goodwill, signs, inventory, stock in trade, supplies,
+                promotional materials, contracts and equipment leases accepted
+                by Buyer, websites and their contents and all domain names,
+                unexpired warranties and equipment manuals, and trade name of
+                the Business Opportunity, unless excluded under §12.B
+                (Exclusions)
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>Conveyance.</b> Any and all Inclusions must be conveyed by
+                Seller free and clear of all taxes (except personal property
+                taxes for the year of Closing), liens and encumbrances, except
+                N/A. Conveyance of all Inclusions will be by Bill of Sale or
+                other applicable legal instrument.
+              </h6>
+              <ul style="list-style: lower-roman">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Other Inclusions.</b> The following items, whether
+                    fixtures or personal Business Opportunity, are also
+                    included in the Purchase Price.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Leased Items.</b> The following leased items are part
+                    of the transaction: <%= leased_items_transaction %>.
+                  </h6>
+                </li>
+                <li style="font-weight: 400">
+                  <h6>
+                    <b>Lease Documents.</b> Seller agrees to supply to buyer,
+                    as will be set forth in the final contract between Seller
+                    and buyer, the documents between Seller and Seller’s
+                    lessor regarding the lease, leased item, cost and other
+                    terms including requirements imposed upon a buyer if buyer
+                    is assuming the leases.
+                  </h6>
+                </li>
+              </ul>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6 style="margin-bottom: 15px;">
+                <b>Exclusions.</b> The following are excluded (Exclusions):
+                <%= price_exclusions %>.
+              </h6>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>TITLE AND ENCUMBERANCES.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6 style="margin-bottom: 15px;">
+                <b>Seller Representation.</b> Seller represents that title to
+                the Business Opportunity is solely in Seller’s name.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>Delivery of Documents.</b> Seller must deliver to Broker
+                true copies of all relevant title materials, leases, liens and
+                other encumbrances, if any, on the Business Opportunity, of
+                which Seller has knowledge.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6>
+                <b>Monetary Encumbrances.</b> Business Opportunity must be
+                conveyed free and clear of all taxes, except the general taxes
+                for the year of closing. All monetary encumbrances (such as
+                mortgages, deeds of trust, liens, financing statements) must
+                be paid by Seller and released except as Seller and buyer may
+                otherwise agree. Existing monetary encumbrances are as
+                follows: <%= existing_monetary %>. If the Business Opportunity
+                has been or will be subject to any governmental liens for
+                special improvements installed at the time of signing a
+                contract for the Sale of the Business Opportunity, Seller is
+                responsible for payment of same, unless otherwise agreed.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6 style="margin-bottom: 15px;">
+                <b>Tenancies.</b> The Business Opportunity will be conveyed
+                subject to the following leases and tenancies for possession
+                of the Business Opportunity: <%= seller_info %>
+              </h6>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>POSSESSION.</b></h5>
+              <h6 style="margin-top: 0">
+                Possession of the Business Opportunity will be delivered to
+                buyer at closing, subject to leases and tenancies as described
+                in § 13.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>MATERIAL DEFECTS, DISCLOSURES AND INSPECTION.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6>
+                <b>Broker’s Obligations.</b> Colorado law requires a broker to
+                disclose to any prospective buyer all adverse material facts
+                actually known by such broker including but not limited to
+                adverse material facts pertaining to the title to the Business
+                Opportunity and the physical condition of the Business
+                Opportunity, any material defects in the Business Opportunity,
+                and any environmental hazards affecting the Business
+                Opportunity which are required by law to be disclosed. These
+                types of disclosures may include such matters as structural
+                defects, soil conditions, violations of health, zoning or
+                building laws, and nonconforming uses and zoning variances.
+                Seller agrees that any buyer may have the Business Opportunity
+                and Inclusions inspected and authorizes Broker to disclose any
+                facts actually known by Broker about the Business Opportunity.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6><b>Seller’s Obligation </h6>
+              <ul style="list-style: lower-roman">
+                <!-- <li style="display: none"></li> -->
+                <li style="font-weight: 400">
+                  <h6 style="margin-bottom: 15px;">
+                    <b>Condition of Business Opportunity.</b> The Business
+                    Opportunity will be conveyed in the condition existing as
+                    of the date of the contract for Sale or Lease of the
+                    Business Opportunity, ordinary wear and tear excepted,
+                    unless Seller, at Seller’s sole option, agrees in writing
+                    to any repairs or other work to be performed by Seller.
+                  </h6>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>RIGHTS OF PARTIES TO CANCEL.</b></h5>
+          <ul style="list-style: upper-alpha">
+            <!-- <li style="display: none"></li> -->
+            <li style="font-weight: 400">
+              <h6>
+                <b>Right of Seller to Cancel.</b> In the event Broker defaults
+                under this Seller Listing Contract, Seller has the right to
+                cancel this Seller Listing Contract, including all rights of
+                Brokerage Firm to any compensation if the Seller Agency box is
+                checked. Examples of a Broker default include, but are not
+                limited to (1) abandonment of Seller, (2) failure to fulfill
+                all material obligations of Broker and (3) failure to fulfill
+                all material Uniform Duties (§ 5) or, if the Seller Agency box
+                at the top of page 1 is checked, the failure to fulfill all
+                material Additional Duties Of Seller’s Agent (§ 6). Any rights
+                of Seller that accrued prior to cancellation will survive such
+                cancellation. Should Seller decide to terminate this Seller
+                Listing Contract for any other reason, the Brokerage Firm
+                shall be entitled to the Sale Commission outlined in § 7.A.i.
+              </h6>
+            </li>
+
+            <li style="font-weight: 400">
+              <h6 style="margin-bottom: 15px;">
+                <b>Right of Broker to Cancel.</b> Brokerage Firm may cancel
+                this Seller Listing Contract upon written notice to Seller
+                that the Business Opportunity is not satisfactory to Brokerage
+                Firm. Although Broker has no obligation to investigate or
+                inspect the Business Opportunity, and no duty to verify
+                statements made, Brokerage Firm has the right to cancel this
+                Seller Listing Contract if any of the following are
+                unsatisfactory (1) the physical condition of the Business
+                Opportunity or Inclusions, or (2) Seller willfully
+                misrepresents facts, financial information, or supporting
+                documentation related to Business Opportunity, which adversely
+                affects the ability to consummate a Sale of Business
+                Opportunity, or (3) any other activity or nuances of the
+                Business Opportunity and its effect or expected effect on the
+                Business Opportunity or its occupants, or (4) any facts or
+                suspicions regarding circumstances that could psychologically
+                impact or stigmatize the Business Opportunity. Additionally,
+                Brokerage Firm has the right to cancel this Seller Listing
+                Contract if Seller or occupant of the Business Opportunity
+                fails to reasonably cooperate with Broker or Seller defaults
+                under this Seller Listing Contract. Any rights of Brokerage
+                Firm that accrued prior to cancellation will survive such
+                cancellation.
+              </h6>
+            </li>
+          </ul>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>FORFEITURE OF PAYMENTS.</b></h5>
+              <h6 style="margin-top: 0">
+                In the event of a forfeiture of payments made by a buyer, the
+                sums received will be divided between Brokerage Firm and
+                Seller, one-half to Brokerage Firm but not to exceed the
+                Brokerage Firm compensation agreed upon herein, and the
+                balance to Seller. Any forfeiture of payment under this
+                section will not reduce any Brokerage Firm compensation owed,
+                earned and payable under §7.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>COST OF SERVICES AND REIMBURSEMENT.</b></h5>
+              <h6 style="margin-top: 0">
+                Unless otherwise agreed upon in writing, Brokerage Firm must
+                bear all expenses incurred by Brokerage Firm, if any, to
+                market the Business Opportunity and to compensate cooperating
+                brokerage firms, if any. Neither Broker nor Brokerage Firm
+                will obtain or order any other products or services unless
+                Seller agrees in writing to pay for them promptly when due
+                (examples: title reports, Business Opportunity valuations,
+                inspections, etc.). Unless otherwise agreed, neither Broker
+                nor Brokerage Firm is obligated to advance funds for Seller.
+                Seller must reimburse Brokerage Firm for payments made by
+                Brokerage Firm for such products or services authorized by
+                Seller.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+         <h5 style="margin-bottom:0"><b>DISCLOSURE OF SETTLEMENT COSTS.</b></h5>
+              <h6 style="margin-top: 0">
+                Seller acknowledges that costs, quality, and extent of service
+                vary between different settlement service providers (e.g.,
+                attorneys, lenders, inspectors, and title companies).
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>MAINTENANCE OF THE BUSINESS OPPORTUNITY.</b></h5>
+              <h6 style="margin-top: 0">
+                Neither Broker nor Brokerage Firm is responsible for
+                maintenance of the Business Opportunity nor are they liable
+                for damage of any kind occurring to the Business Opportunity
+                unless such damage is caused by their negligence or
+                intentional misconduct.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+         <h5 style="margin-bottom:0"><b>NONDISCRIMINATION.</b></h5>
+              <h6 style="margin-top: 0">
+                The parties agree not to discriminate unlawfully against any
+                prospective buyers because of their inclusion in a “protected
+                class” as defined by federal, state or local law. “Protected
+                classes” include, but are not limited to, race, creed, color,
+                sex, sexual orientation, gender identity, marital status,
+                familial status, physical or mental disability, handicap,
+                religion, national origin, or ancestry of such person. Seller
+                authorizes Broker to withhold any supplemental information
+                about the prospective buyer if such information would disclose
+                a buyer’s protected class(es). However, any financial,
+                employment or credit worthiness information about the buyer
+                received by Broker will be submitted to Seller.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+         <h5 style="margin-bottom:0"><b>RECOMMENDATION OF LEGAL AND TAX COUNSEL.</b></h5>
+              <h6 style="margin-top: 0">
+                By signing this document, Seller acknowledges that Broker has
+                advised that this document has important legal consequences
+                and has recommended consultation with legal and tax or other
+                counsel before signing this Seller Listing Contract.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>MEDIATION.</b></h5>
+              <h6 style="margin-top: 0">
+                If a dispute arises relating to this Seller Listing Contract,
+                prior to or after closing, and is not resolved, the parties
+                must first proceed in good faith to submit the matter to
+                mediation. Mediation is a process in which the parties meet
+                with an impartial person who helps to resolve the dispute
+                informally and confidentially. Mediators cannot impose binding
+                decisions. The parties to the dispute must agree, in writing,
+                before any settlement is binding. The parties will jointly
+                appoint an acceptable mediator and will share equally in the
+                cost of such mediation. The mediation, unless otherwise
+                agreed, will terminate in the event the entire dispute is not
+                resolved within 30 calendar days of the date written notice
+                requesting mediation is delivered by one party to the other at
+                the other party’s last known address.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>ATTORNEY FEES.</b></h5>
+              <h6 style="margin-top: 0">
+                In the event of any arbitration or litigation relating to this
+                Seller Listing Contract, the arbitrator or court must award to
+                the prevailing party all reasonable costs and expenses,
+                including attorney and legal fees.
+              </h6>
+        </li>
+
+        <li style="font-weight: 800">
+          <h5 style="margin-bottom:0"><b>ADDITIONAL PROVISIONS/:</b></h5>
+              <h6 style="margin-top: 0; margin-bottom: 15px"><%= additional_provisions %></h6>
+          </li>
+
+          <li style="font-weight: 800">
+              <h5 style="margin-bottom:0"><b>ATTACHMENTS:</b></h5>
+             <h6 style="margin-top: 0">
+                  The following are a part of this Exclusive Right To Sell
+                  Listing Contract:
+              </h6>
+          </li>
+
+          <li style="font-weight: 800">
+            <h5 style="margin-bottom:0"><b>NO OTHER PARTY OR INTENDED BENEFICIARIES.</b></h5>
+             <h6 style="margin-top: 0">
+                  Nothing in this Seller Listing Contract is deemed to inure to
+                  the benefit of any person other than Seller, Broker and
+                  Brokerage Firm.
+              </h6>
+          </li>
+
+          <li style="font-weight: 800">
+            <h5 style="margin-bottom:0"><b>NOTICE, DELIVERY AND CHOICE OF LAW.</b></h5>
+            <ul style="list-style: upper-alpha">
+              <!-- <li style="display: none"></li> -->
+              <li style="font-weight: 400">
+             <h6>
+                  <b>Physical Delivery and Notice.</b> Any document or notice to
+                  Brokerage Firm or Seller must be in writing, except as
+                  provided in § 27.B and is effective when physically received
+                  by such party, or any individual named in this Seller Listing
+                  Contract to receive documents or notices for such party.
+              </h6>
+              </li>
+
+              <li style="font-weight: 400">
+             <h6>
+                  <b>Electronic Notice and Delivery.</b> As an alternative to
+                  physical delivery, any notice, may be delivered in electronic
+                  form to Brokerage Firm or Seller, or any individual named in
+                  this Seller Listing Contract to receive documents or notices
+                  for such party at the electronic address of the recipient by
+                  facsimile, email or by Brokerage Firm’s Customer Relationship
+                  Management system.
+              </h6>
+              </li>
+
+              <li style="font-weight: 400">
+             <h6 style="margin-bottom: 15px;">
+                  <b>Choice of Law.</b> This Seller Listing Contract and all
+                  disputes arising hereunder are governed by and construed in
+                  accordance with the laws of the State of Colorado that would
+                  be applicable to Colorado residents who sign a contract in
+                  Colorado for real property located in Colorado.
+              </h6>
+              </li>
+            </ul>
+          </li>
+
+          <li style="font-weight: 800">
+            <h5 style="margin-bottom:0"><b>MODIFICATION OF THIS SELLER LISTING CONTRACT.</b></h5>
+             <h6 style="margin-top: 0">
+                  No subsequent modification of any of the terms of this Seller
+                  Listing Contract is valid, binding upon the parties, or
+                  enforceable unless made in writing and signed by the parties.
+              </h6>
+             
+          </li>
+
+          <li style="font-weight: 800">
+            <h5 style="margin-bottom:0"><b>COUNTERPARTS.</b></h5>
+             <h6 style="margin-top: 0">
+                  This Seller Listing Contract may be executed by each of the
+                  parties, separately, and when so executed by all the parties,
+                  such copies taken together are deemed to be a full and
+                  complete contract between the parties.
+              </h6>
+          </li>
+
+          <li style="font-weight: 800">
+             <h5 style="margin-bottom:0"><b>ENTIRE AGREEMENT.</b></h5>
+             <h6 style="margin-top: 0">
+                  This agreement constitutes the entire contract between the
+                  parties, and any prior agreements, whether oral or written,
+                  have been merged and integrated into this Seller Listing
+                  Contract.
+              </h6>
+          </li>
+
+          <li style="font-weight: 800">
+            <h5 style="margin-bottom:0"><b>COPY OF CONTRACT.</b></h5>
+             <h6 style="margin-top: 0">
+                  Seller acknowledges receipt of a copy of this Seller Listing
+                  Contract signed by Broker, including all attachments.
+              </h6>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bottom_content" style="margin-left: 45px">
+        <div class="detail_line" style="margin-top: 25px">
+       <h6>
+            Brokerage Firm authorizes Broker to execute this Seller Listing
+            Contract on behalf of Brokerage Firm.
+        </h6>
+        <h6>
+          By proceeding, you agree that Business Brokerage Services may communicate with you via telephone, video, email, 
+          text messages, or other media and messaging applications.
+          Message and data rates may apply. If you would like to opt out at any time,
+          please send an email with "STOP" to ask@denverbbs.com.
+        </h6>
+        </div>
+
+        <div class="seller_info_sec" style="margin-top: 40px">
+          <span style="text-transform: uppercase"><b>SELLER:</b></span>
+          <div
+            class="seller_name"
+            style="margin-top: 40px; margin-bottom: 12px"
+          >
+            <span
+              style="
+                border-bottom: 1px solid black;
+                padding: 0 30px 5px 30px;
+                width: 190px;
+                display: block;
+              "
+            >_________________________
+          </span>
+          </div>
+       <h6 style="margin-bottom: 0; margin-top: 0">
+            By: <span><%= seller_title %></span> for
+                <span><%= listingTitle %></span>
+              </h6>
+              <h6 style="margin-bottom: 0; margin-top: 0">
+                Title: <span><%= seller_title %></span>
+              </h6>
+              <h6 style="margin-bottom: 0; margin-top: 0">
+                Telephone: <span><%= seller_phone %></span>
+              </h6>
+              <h6 style="margin-bottom: 0; margin-top: 0">
+                Email: <span><%= seller_email %></span>
+              </h6>
+    </div>
+
+    <div class="seller_info_sec" style="margin-top: 20px">
+      <span style="text-transform: uppercase"><b>BROKER:</b></span>
+      <div class="seller_name" style="margin-top: 40px; margin-bottom: 12px">
+        <span style="
+                padding: 0 30px 5px 30px;
+                width: 190px;
+                display: block;
+              ">_________________________</span>
+      </div>
+      <h6 style="margin-bottom: 0; margin-top: 0">
+        Business Brokerage Services, LLC
+      </h6>
+      <h6 style="margin-bottom: 0; margin-top: 0">
+        <%= broker_name %>, Broker
+      </h6>
+      <h6 style="margin-bottom: 0; margin-top: 0">
+        Telephone: <span><%= broker_phone %></span>
+      </h6>
+      <h6 style="margin-bottom: 0; margin-top: 0">
+        Email: <span><%=broker_email%></span>
+      </h6>
+    </div>
+    </div>
+  </section>
+</body>
+
+</html>

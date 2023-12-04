@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Non-Disclose Agreement</title>
+
+    <style>
+      @font-face {
+        font-family: 'bebas_neue_bold';
+        src: url('<%= URL %>/assets/fonts/BebasNeue_Bold.ttf');
+      }
+
+      @font-face {
+        font-family: 'OpenSans-Regular';
+        src: url('<%= URL %>/assets/fonts/OpenSans-Regular.ttf');
+      }
+
+      @font-face {
+        font-family: 'OpenSans-SemiBold';
+        src: url('<%= URL %>/assets/fonts/OpenSans-SemiBold.ttf');
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: 'bebas_neue_bold';
+        color: #02528a;
+      }
+
+      ul li {
+        margin-bottom: 15px;
+      }
+
+      p,
+      li {
+        font-family: 'OpenSans-Regular';
+        font-size: 13px;
+        line-height: 28px;
+      }
+
+      @page {
+        /*   margin: 20px;
+        size: letter; or width then height 150mm 50mm*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <section
+      class="non_disclosure_agreement_sec"
+      style="max-width: 80%; margin: 0 auto"
+    >
+      <div class="main_heading">
+        <h1
+          style="
+            text-transform: uppercase;
+            color: #02528a;
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 0;
+          "
+        >
+          NON-Disclosure Agreement
+        </h1>
+      </div>
+      <div class="secondary_heading">
+        <h2
+          style="
+            color: #02528a;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-align: center;
+          "
+        >
+          This is a non-disclosure agreement ["Agreement"] Between:
+        </h2>
+      </div>
+
+      <div class="agreement_header">
+        <div class="left_col" style="width: 45%; float: left">
+          <p style="max-width: 90%; text-align: justify">
+            Business Brokerage Services, LLC a Colorado Corporation (“the
+            Brokerage”).
+          </p>
+        </div>
+        <div class="center_col" style="width: 10%; float: left">
+          <p style="text-align: center; font-family: 'OpenSans-SemiBold'">
+            AND
+          </p>
+        </div>
+        <div class="right_col" style="width: 45%; float: left">
+          <p style="max-width: 90%; text-align: justify; margin-left: auto">
+            The undersigned individual and on behalf of undersigned’s business
+            entity, its officers, directors, partners, shareholders, employees,
+            agents, and advisors (collectively the “Buyer”)
+          </p>
+        </div>
+      </div>
+
+      <div class="agreement_header">
+        <div class="left_col" style="width: 45%; float: left">
+          <h3
+            style="
+              color: #02528a;
+              font-size: 14.5px;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            "
+          >
+            Business Brokerage Services, LLC
+          </h3>
+          <p style="max-width: 90%; margin-top: 0; margin-bottom: 15px">
+            7651 Shaffer Parkway Suite B2
+          </p>
+          <p style="max-width: 90%; margin-top: 0">Littleton, Colorado 80127</p>
+          <p style="max-width: 90%; margin-top: 0">ask@denverbbs.com</p>
+        </div>
+        <!-- <div class="center_col" style="width: 10%; float: left;">
+                <p style="text-align: center; font-family: 'OpenSans-SemiBold';"></p>
+            </div> -->
+        <div class="right_col" style="width: 45%; float: right">
+          <br />
+          <br />
+          <p style="max-width: 90%; margin-left: auto"><%= user_name %></p>
+          <p style="max-width: 90%; margin-left: auto"><%= user_contact %></p>
+          <p style="max-width: 90%; margin-left: auto"><%= user_email %></p>
+        </div>
+      </div>
+
+      <div
+        class="agreement_subject"
+        style="width: 100%; float: left; text-align: center"
+      >
+        <h3
+          style="
+            color: #02528a;
+            font-size: 14.5px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: inline-block;
+          "
+        >
+          Nda For/ Business Ref :
+        </h3>
+        <p style="display: inline-block"><%= store_name %></p>
+      </div>
+
+      <div class="agreement_main_content" style="float: left; width: 100%">
+        <p style="text-align: justify">
+          Our agreement with the Seller requires that the Brokerage obtain a
+          Non-Disclosure Agreement and evidence of financial ability/proof of
+          funds from the Buyer before disclosing the name, location, or any
+          confidential information of the Business(s). Any and all information
+          obtained from the Buyer will be kept confidential by the Brokerage.
+          “Information” as used in this Agreement will include the fact that the
+          Business is for sale, in addition to any/all proprietary, sensitive,
+          confidential data, and descriptive details provided about the
+          Business(s) by the Brokerage, Seller, or any other sources. The Buyer
+          agrees that ALL Information will be kept confidential.
+        </p>
+      </div>
+
+      <div class="buyers_acknowledges_content" style="float: left; width: 100%">
+        <div class="top_heading">
+          <h3
+            style="
+              font-size: 14.5px;
+              text-transform: uppercase;
+              margin-bottom: 15px;
+            "
+          >
+            The Buyer acknowledges and agrees:
+          </h3>
+        </div>
+        <div class="acknowledge_points">
+          <ul style="text-align: justify">
+            <li style="color: red">
+              Not to contact the Seller or it’s landlords, franchisors,
+              employees, suppliers, or customers except through the Brokerage.
+              All correspondence, Inquiries, offers to purchase, and
+              negotiations relating to the purchase or lease of any business
+              presented by the Brokerage will be conducted exclusively through
+              the Brokerage.
+            </li>
+            <li>
+              Any information provided about the Business is proprietary,
+              sensitive, and confidential. The disclosure of any information to
+              any other party may be damaging to the Business and/or Seller.
+            </li>
+            <li>
+              Not to disclose, for a period of 2 years following the date of
+              receipt of any information regarding any Business to any other
+              person who has not signed this Agreement, except to secure the
+              advice and recommendations of business advisors (accountants or
+              attorneys).
+            </li>
+            <li>
+              Not to circumvent or interfere with the Brokerage contract with
+              the Seller in any way. The Buyer understands that if the Buyer or
+              any agent thereof, interferes with the Brokerage's contractual
+              right its fee from the Seller, the Buyer will be personally liable
+              for any commission due to the Brokerage. The Buyer understands
+              that shoul the Buyer become a manager, employee, or otherwise
+              connected in any way with the Business shown or offered to the
+              Buyer for sale, or should the Buyer buy, trade, lease or exchange
+              any of the Business that is disclosed to the Buyer, then a
+              commission will be due to the Brokerage from the Buyer.
+            </li>
+            <li>
+              The Buyer understands that if the Buyer purchases the Business
+              through the Brokerage, the Buyer will not be liable for
+              commissions to be paid to the Brokerage by Seller.
+            </li>
+            <li>
+              The Buyer acknowledges and agrees that all Information regarding
+              the Business is provided by the Seller or other sources and is not
+              verified in any way by the Brokerage. The Brokerage has knowledge
+              of the accuracy of the Information and makes no warranty,
+              expressed or implied, as to the accuracy of the Information.
+              Understanding that the Buyer will make an independent verification
+              of the Information prior to the purchase of the business, the
+              Buyer agrees that the Brokerage is not responsible for the
+              accuracy of any of the Information that the Buyer receives or
+              fails to receive and that the Buyer agrees to indemnify and hold
+              the Brokerage and its agents harmless from any claims or damages
+              which may occur by reason of the inaccuracy or incompleteness of
+              any Information provided to the Buyer with respect to the
+              Business.
+            </li>
+            <li>
+              Should the Buyer decide to no longer pursue the purchase of the
+              Business, the Buyer will promptly advise the Brokerage of this
+              fact and will immediately return all proprietary, sensitive, and
+              confidential Information furnished to the Buyer, without retaining
+              copies, summaries, analyses, or extracts.
+            </li>
+            <li>
+              The Buyer further agrees that any earnest money deposit made for
+              the purchase of this business will be held in trust with Business
+              Brokerage Services, LLC.
+            </li>
+            <li>
+              Business Brokerage Services is a Multiple-Person Firm that has a
+              “Success Fee” based upon a contract between Seller for the sale,
+              trade, lease, or transfer of the Seller's Business and/or
+              Property.
+            </li>
+            <li>
+              The Broker is a Transactional Broker/Intermediary. However, the
+              Brokerage, at its sole discretion with notice, may assign
+              different roles to different Brokers to assist the Buyer or Seller
+              reapectively.
+            </li>
+            <li>
+              The Buyer was provided “Brokerage Disclosure to Buyer Definitions
+              of Working Relationships.”
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="working_relations_sec" style="float: left; width: 100%">
+        <div class="main_heading">
+          <h3
+            style="
+              text-transform: uppercase;
+              font-size: 14.5px;
+              margin-bottom: 15px;
+            "
+          >
+            BROKERAGE DISCLOSURE TO BUYER DEFINITIONS OF WORKING RELATIONSHIPS
+          </h3>
+        </div>
+
+        <div class="working_relaton_points" style="text-align: justify">
+          <div class="point">
+            <p>
+              <span
+                style="
+                  color: #02528a;
+                  font-size: 14.5px;
+                  text-decoration: underline;
+                  font-family: 'bebas_neue_bold';
+                "
+                >Seller's Agent</span
+              >
+              A seller’s agent (or listing agent) works solely on behalf of the
+              seller to promote the interests of the seller with the utmost good
+              faith, loyalty and fidelity. The agent negotiates on behalf of and
+              acts as an advocate for the seller. The seller’s agent must
+              disclose to potential buyers all adverse material facts actually
+              known by the seller’s agent about the property. A separate written
+              listing agreement is required which sets forth the duties and
+              obligations of the broker and the seller.
+            </p>
+          </div>
+
+          <div class="point">
+            <p>
+              <span
+                style="
+                  color: #02528a;
+                  font-size: 14.5px;
+                  text-decoration: underline;
+                  font-family: 'bebas_neue_bold';
+                "
+                >Buyer’s Agent:</span
+              >
+              A buyer’s agent works solely on behalf of the buyer to promote the
+              interests of the buyer with the utmost good faith, loyalty and
+              fidelity. The agent negotiates on behalf of and acts as an
+              advocate for the buyer. The buyer’s agent must disclose to
+              potential sellers all adverse material facts actually known by the
+              buyer’s agent including the buyer’s financial ability to perform
+              the terms of the transaction and, if a residential property,
+              whether the buyer intends to occupy the property. A separate
+              written buyer agency agreement is required which sets forth the
+              duties and obligations of the broker and the buyer.
+            </p>
+          </div>
+
+          <div class="point">
+            <p>
+              <span
+                style="
+                  color: #02528a;
+                  font-size: 14.5px;
+                  text-decoration: underline;
+                  font-family: 'bebas_neue_bold';
+                "
+                >Transaction-Broker:</span
+              >
+              A transaction-broker assists the buyer or seller or both
+              throughout a real estate transaction by performing terms of any
+              written or oral agreement, fully informing the parties, presenting
+              all offers and assisting the parties with any contracts, including
+              the closing of the transaction without being an agent or advocate
+              for any of the parties. A transaction-broker must use reasonable
+              skill and care in the performance of any oral or written
+              agreement, and must make the same disclosures as agents about all
+              adverse material facts actually known by the transaction-broker
+              concerning a property or a buyer’s financial ability to perform
+              the terms of a transaction and, if a residential property, whether
+              the buyer intends to occupy the property. No written agreement is
+              required.
+            </p>
+          </div>
+
+          <div class="point">
+            <p>
+              <span
+                style="
+                  color: #02528a;
+                  font-size: 14.5px;
+                  text-decoration: underline;
+                  font-family: 'bebas_neue_bold';
+                "
+                >Customer:</span
+              >
+              A customer is a party to a real estate transaction with whom the
+              broker has no brokerage relationship because such party has not
+              engaged or employed the broker, either as the party’s agent or as
+              the party’s transaction-broker.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="broker_information_sec"
+        style="float: left; width: 100%; page-break-before: always"
+      >
+        <div class="main_heading">
+          <h3
+            style="
+              text-transform: uppercase;
+              font-size: 14.5px;
+              margin-bottom: 15px;
+              font-family: 'OpenSans-SemiBold';
+            "
+          >
+            BROKER INFORMATION
+          </h3>
+        </div>
+
+        <div class="form_content">
+          <p style="margin-top: 0">
+            Are you a broker, or in contract with one?
+            <span>(<%= broker_contract %> )</span>
+          </p>
+          <div class="col_wrapper" style="font-weight: 400">
+            <div class="col_left" style="float: left; width: 48%">
+              <div>
+                <span style="color: #02528a">Broker's Name:</span>
+                <p style="display: inline-block; margin-top: 0">
+                  <%= broker_name %>
+                </p>
+              </div>
+            </div>
+            <div class="col_right" style="float: right; width: 48%">
+              <div>
+                <span style="color: #02528a">Broker's Company Name:</span>
+                <p style="display: inline-block; margin-top: 0">
+                  <%= brokers_company_name %>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p style="color: #02528a; float: left">
+            If you selected yes above, broker name and broker's company name is
+            mandatory.
+          </p>
+
+          <div class="main_heading" style="float: left; width: 100%">
+            <h3
+              style="
+                text-transform: uppercase;
+                font-size: 14.5px;
+                margin-bottom: 15px;
+                font-family: 'OpenSans-SemiBold';
+              "
+            >
+              PERSONAL INFORMATION [OPTIONAL]
+            </h3>
+          </div>
+
+          <div class="col_wrapper">
+            <div
+              class="col_left"
+              style="float: left; width: 48%; font-weight: 400"
+            >
+              <div>
+                <span style="color: #02528a">Street Address:</span>
+                <p style="margin-top: 0"><%= street_address %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">State:</span>
+                <p style="margin-top: 0"><%= state %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Location Preferences:</span>
+                <p style="margin-top: 0"><%= location_preference %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Current Occupation:</span>
+                <p style="margin-top: 0"><%= current_occupation %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Business Allocation Time:</span>
+                <p style="margin-top: 0">
+                  <%= allocation_time_towards_business %>
+                </p>
+              </div>
+            </div>
+            <div
+              class="col_right"
+              style="float: right; width: 48%; font-weight: 400"
+            >
+              <div>
+                <span style="color: #02528a">City:</span>
+                <p style="margin-top: 0"><%= city %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Zip Code:</span>
+                <p style="margin-top: 0"><%= zipcode %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Capital For Purchase:</span>
+                <p style="margin-top: 0"><%= capital_available_purchase %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Type Of Busniess:</span>
+                <p style="margin-top: 0"><%= type_of_business %></p>
+              </div>
+              <div>
+                <span style="color: #02528a">Min Annual Income Needs:</span>
+                <p style="margin-top: 0"><%= minimum_annual_income_needs %></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="acknowledgment_check" style="float: left; width: 100%">
+            <p>
+              By proceeding, you agree that Business Brokerage Services may
+              communicate with you via telephone, video, email, text messages,
+              or other media and messaging applications. Message and data rates
+              may apply. If you would like to opt out at any time, please send
+              an email with "STOP" to ask@denverbbs.com.
+            </p>
+            <p>
+              I Acknowledge That I Have Read The Non-Disclosure Agreement And
+              Brokerage Disclosure To Buyer Definitions Of Working Relationships
+              Carefully And Fully Understand Them.
+              <span style="font-weight: 800">( <%= acknowleged_check %> )</span>
+            </p>
+            <p>
+              I Unconditionally Agree To All Terms And Conditions Of All The
+              Points Above
+              <span style="font-weight: 800"
+                >( <%= terms_condition_check %> )</span
+              >
+            </p>
+          </div>
+
+          <div
+            class="footer_text"
+            style="
+              text-align: center;
+              float: left;
+              width: 100%;
+              margin-top: 20px;
+            "
+          >
+            <p style="font-family: 'OpenSans-SemiBold'">
+              All Personal Information Received From Buyer Is Confidential And
+              Shall Not Be Shared With Any Other Entities
+            </p>
+            <br />
+            <br />
+            <p style="font-family: 'OpenSans-SemiBold'">
+              Submitted by <%= user_name %> from the email address: <%=
+              user_email %> on <%= signing_date %> from Ip Address: <%= ip %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

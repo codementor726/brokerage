@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+      .jumbotron {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      style="font-family: Calibri !important; font-size: 11px !important"
+    >
+      <%- include('../partials/header') %>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div
+            style="
+              padding: 30px;
+              margin-top: 20px;
+              border: 1px solid lightgray;
+              background-color: #fbfbfb;
+              box-shadow: 0 0 5px lightgrey;
+              width: 100%;
+              max-width: 50%;
+              margin: 0 auto;
+            "
+          >
+            <div>
+              <h2>Hi <%= firstName %>,</h2>
+            </div>
+            <!-- loop over blog posts and render them -->
+            <div style="padding-bottom: 20px">
+              <p style="line-height: 20px">
+                You have got a new lead from bizbuynow on listing:
+                <b><%= payload.listingName %></b>. Basic information about the
+                lead is as follows:
+                <br />
+                <br />
+                <b>Contact Name:</b> <%= payload.contactName %>
+                <br />
+                <b>Email:</b> <%= payload.email %>
+                <br />
+                <b>Ref Id:</b> <%= payload.refID %>
+              </p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </div>
+      <%- include('../partials/footer', { email: payload.email, contact:
+      payload.contact, address: payload.address}); %>
+    </div>
+  </body>
+</html>
